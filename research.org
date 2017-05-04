@@ -1,0 +1,34 @@
+
+Electron a besoin de 3 trucs pour fonctionner: 
+    - index.html
+    - package.json
+    - main.js
+
+
+index.html : 
+    fichier qui va être utiliser pour le mainWindow dans Electron
+
+package.json:
+    quelque chose de primordial pour Electron, c'est de pointer le main.js, le fichier qui va contenir les instructions de rendu
+
+main.js:
+    fichier qui contient les instructions de rendu et interactions
+    
+
+https://medium.freecodecamp.com/building-an-electron-application-with-create-react-app-97945861647c
+http://stackoverflow.com/questions/37489543/electron-rebuild-unable-to-find-electron-app
+
+electron-packager :
+    créer des execs
+
+WINDOWS
+#+BEGIN_SRC 
+node_modules/.bin/electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.ProductName=\"Lucoa\"
+#+END_SRC
+
+electron-builder:
+    créer des installs
+
+https://github.com/electron-userland/electron-builder
+
+
