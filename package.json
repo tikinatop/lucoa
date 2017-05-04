@@ -1,0 +1,23 @@
+{
+  "name": "lucoa",
+  "version": "0.1.0",
+  "description": "L'appli GTD ultime et extensible!",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tikinatop/lucoa.git"
+  },
+  "keywords": [
+    "gtd",
+    "electron"
+  ],
+  "author": "KANU",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tikinatop/lucoa/issues"
+  },
+  "homepage": "https://github.com/tikinatop/lucoa#readme"
+}
