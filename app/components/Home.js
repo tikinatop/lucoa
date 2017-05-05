@@ -8,8 +8,14 @@ export default class Home extends Component {
     return (
       <div>
         <div className={styles.container} data-tid="container">
-          <h2>Home</h2>
-          <Link to="/counter">to Counter</Link>
+          <h2>Lucoa</h2>
+          <p>Bienvenue! </p>
+          <div>
+          <Link to="/nal">Next Actions list</Link>
+          </div>
+          <div>
+          <Link to="/pl">Projects list</Link>
+          </div>
         </div>
       </div>
     );
