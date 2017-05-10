@@ -11,10 +11,10 @@ export default class Home extends Component {
           <h2>Lucoa</h2>
           <p>Bienvenue! </p>
           <div>
-          <Link to="/nal">Next Actions list</Link>
+            <Link to="/nal">Next Actions list</Link>
           </div>
           <div>
-          <Link to="/pl">Projects list</Link>
+            <Link to="/pl">Projects list</Link>
           </div>
         </div>
       </div>

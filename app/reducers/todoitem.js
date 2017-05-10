@@ -1,21 +1,33 @@
 // @flow
-import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../actions/todoitem';
+import { combineReducers } from 'redux';
+import { CREATE_TODO, CHECK_TODO, REMOVE_TODO } from '../actions/todoitem';
 
-export type counterStateType = {
-  counter: number
-};
-
-type actionType = {
-  type: string
-};
-
-export default function counter(state: number = 0, action: actionType) {
+function todos(state = [], action) {
   switch (action.type) {
-    case INCREMENT_COUNTER:
-      return state + 1;
-    case DECREMENT_COUNTER:
-      return state - 1;
+    case CREATE_TODO:
+      return [
+        ...state,
+        {
+          text: action.text,
+          isDone: false
+        }
+      ];
+    case CHECK_TODO:
+      return state.map((todo, index) => {
+        if (index === action.index) {
+          return Object.assign({}, todo, {
+            completed: todo.completed
+          });
+        }
+        return todo;
+      });
     default:
       return state;
   }
 }
+
+const todoApp = combineReducers({
+  todos
+});
+
+export default todoApp;

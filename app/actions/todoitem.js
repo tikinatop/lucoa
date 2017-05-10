@@ -1,37 +1,28 @@
 // @flow
-import type { counterStateType } from '../reducers/todoitem';
 
-export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
-export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
+export const CREATE_TODO = 'CREATE_TODO';
+export const REMOVE_TODO = 'REMOVE_TODO';
+export const CHECK_TODO = 'CHECK_TODO';
 
-export function increment() {
+
+export function create(text) {
   return {
-    type: INCREMENT_COUNTER
+    type: CREATE_TODO,
+    text
   };
 }
 
-export function decrement() {
+export function remove(index) {
   return {
-    type: DECREMENT_COUNTER
+    type: CHECK_TODO,
+    index
   };
 }
 
-export function incrementIfOdd() {
-  return (dispatch: () => void, getState: () => counterStateType) => {
-    const { counter } = getState();
 
-    if (counter % 2 === 0) {
-      return;
-    }
-
-    dispatch(increment());
-  };
-}
-
-export function incrementAsync(delay: number = 1000) {
-  return (dispatch: () => void) => {
-    setTimeout(() => {
-      dispatch(increment());
-    }, delay);
+export function check(index) {
+  return {
+    type: CHECK_TODO,
+    index
   };
 }

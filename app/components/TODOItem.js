@@ -1,38 +1,38 @@
+// TODO: Faire qqhcose
+// TODO: Le TODO Item aura
+// {
+// status: default : TODO {
+//   isDone }
+// }
+// content: markupd text
+// tags: [string list]
+
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './TODOItem.css';
 
+
 class TODOItem extends Component {
   props: {
-    increment: () => void,
-    incrementIfOdd: () => void,
-    incrementAsync: () => void,
-    decrement: () => void,
-    counter: number
+    create: () => void,
+    remove: () => void,
+    check: () => void,
+    status: {
+      keyword: string,
+      isDone: boolean
+    },
+    content: string
   };
 
   render() {
-    const { increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props;
+    const { create, remove, check, status.keyword, status.isDone, content } = this.props;
     return (
-      <div>
-        <div className={styles.backButton} data-tid="backButton">
-          <Link to="/">
-            <i className="fa fa-arrow-left fa-3x" />
-          </Link>
-        </div>
-        <div className={`counter ${styles.counter}`} data-tid="counter">
-          {counter}
-        </div>
-        <div className={styles.btnGroup}>
-          <button className={styles.btn} onClick={increment} data-tclass="btn">
-            <i className="fa fa-plus" />
-          </button>
-          <button className={styles.btn} onClick={decrement} data-tclass="btn">
-            <i className="fa fa-minus" />
-          </button>
-          <button className={styles.btn} onClick={incrementIfOdd} data-tclass="btn">odd</button>
-          <button className={styles.btn} onClick={() => incrementAsync()} data-tclass="btn">async</button>
-        </div>
+      <div className="todoList">
+
+      </div>
+      <div className="todoHub">
+        <button onClick={create}>Ajouter un TODO</button>
+        <button onClick={remove}>Supprimer un TODO</button>
       </div>
     );
   }
